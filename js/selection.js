@@ -32,13 +32,14 @@ function attackOne() {
  selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 5;
  Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
  Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
+ 
 
  if(compPokemonHP.innerHTML <= 0) {
- document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a href="index.html"> Click here to play again! </a>';
+ document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html"> Click here to play again! </a>';
  }
 
  if(selectedPokemonHP.innerHTML <= 0) {
-    document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a href="index.html"> Click here to play again! </a>';
+    document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a onclick="removeCookies()" href="index.html"> Click here to play again! </a>';
     }
 
 
@@ -51,11 +52,11 @@ function attackTwo() {
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
 
     if(compPokemonHP.innerHTML <= 0) {
-        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a href="index.html"> Click here to play again! </a>';
+        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
         }
        
         if(selectedPokemonHP.innerHTML <= 0) {
-           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a href="index.html"> Click here to play again! </a>';
+           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
            }
         
     
@@ -68,11 +69,11 @@ function attackTwo() {
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
 
     if(compPokemonHP.innerHTML <= 0) {
-        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a href="index.html"> Click here to play again! </a>';
+        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
         }
        
         if(selectedPokemonHP.innerHTML <= 0) {
-           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a href="index.html"> Click here to play again! </a>';
+           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
            }
         
     
@@ -85,14 +86,18 @@ function attackTwo() {
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
 
     if(compPokemonHP.innerHTML <= 0) {
-        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a href="index.html"> Click here to play again! </a>';
+        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
         }
        
         if(selectedPokemonHP.innerHTML <= 0) {
-           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a href="index.html"> Click here to play again! </a>';
+           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
            }
         
     
    }
    
-         
+function removeCookies() {
+    Cookies.remove("userCurrentHealth");
+    Cookies.remove("computerCurrentHealth");
+    Cookies.remove("Pokemon");
+}
