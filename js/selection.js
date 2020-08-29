@@ -63,8 +63,8 @@ function attackTwo() {
    }
    
    function attackThree() {
-    compPokemonHP.innerHTML = compPokemonHP.innerHTML - 2;
-    selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 0;
+    compPokemonHP.innerHTML = compPokemonHP.innerHTML - 15;
+    selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 5;
     Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
 
@@ -80,7 +80,7 @@ function attackTwo() {
    }
    
    function attackFour() {
-    compPokemonHP.innerHTML = compPokemonHP.innerHTML - 5;
+    compPokemonHP.innerHTML = compPokemonHP.innerHTML - 2;
     selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 5;
     Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
@@ -96,6 +96,7 @@ function attackTwo() {
     
    }
 
+
    function dodge() {
     var dodgeStatus = Math.random() < 0.5; 
 
@@ -103,8 +104,6 @@ function attackTwo() {
        compPokemonHP.innerHTML = compPokemonHP.innerHTML - 10;
        } else { selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 15;
     }
-      
-       
 
        if(compPokemonHP.innerHTML <= 0) {
         document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
@@ -116,6 +115,22 @@ function attackTwo() {
         
   }
   
+  function heal() {
+    var healPoints = parseInt(Cookies.get("userCurrentHealth"));
+    
+    if(Cookies.get ("userCurrentHealth") == undefined){
+        selectedPokemonHP.innerHTML = 50; 
+    } else {
+        selectedPokemonHP.innerHTML = healPoints + 10;
+    }
+
+    Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
+    Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
+
+ 
+    }
+
+
    
 function removeCookies() {
     Cookies.remove("userCurrentHealth");
