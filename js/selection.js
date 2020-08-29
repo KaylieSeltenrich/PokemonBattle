@@ -122,12 +122,19 @@ function attackTwo() {
         selectedPokemonHP.innerHTML = 50; 
     } else {
         selectedPokemonHP.innerHTML = healPoints + 10;
+        var finishedHealing = document.getElementById ('heal');
+        parent.remove('heal');
     }
+
+    if(selectedPokemonHP.innerHTML > 50) {
+      selectedPokemonHP.innerHTML = 50; 
+    }
+
 
     Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
-
- 
+    
+  
     }
 
 
