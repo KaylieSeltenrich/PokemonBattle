@@ -95,6 +95,27 @@ function attackTwo() {
         
     
    }
+
+   function dodge() {
+    var dodgeStatus = Math.random() < 0.5; 
+
+    if (dodgeStatus == true ) {
+       compPokemonHP.innerHTML = compPokemonHP.innerHTML - 10;
+       } else { selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 15;
+    }
+      
+       
+
+       if(compPokemonHP.innerHTML <= 0) {
+        document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
+        }
+       
+        if(selectedPokemonHP.innerHTML <= 0) {
+           document.querySelector('body').innerHTML = '<p> YOU LOST :( </p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
+           }
+        
+  }
+  
    
 function removeCookies() {
     Cookies.remove("userCurrentHealth");
