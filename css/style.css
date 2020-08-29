@@ -44,3 +44,17 @@ h1 {
     margin-top: 5%;
 
 }
+
+#game-advice {
+text-align: center;
+margin: 10%;
+}
+
+b {
+    font-size: 20px;
+}
+
+#pokemonSelectionHP, #computerPokemonHP {
+    font-size: 20px;
+    font-weight: bold;
+}
