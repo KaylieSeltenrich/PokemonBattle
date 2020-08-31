@@ -9,6 +9,8 @@ img {
 p {
     text-align: center;
     font-size: 20px;
+    font-weight: bold;
+    margin: 5%;
 }
 
 #container {
@@ -57,4 +59,10 @@ b {
 #pokemonSelectionHP, #computerPokemonHP {
     font-size: 20px;
     font-weight: bold;
+}
+
+a {
+   display: block;
+   text-align: center;
+   font-size: 20px;
 }
