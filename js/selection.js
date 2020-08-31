@@ -4,15 +4,16 @@ selection.innerHTML = selectedPokemon;
 
 
 if(selectedPokemon == "Litten"){
-pokemonSelection.innerHTML = "<img src='../images/Litten.png' alt='Litten'>";
+pokemonSelection.innerHTML = "<img src='../images/Litten.png' alt='Litten'><br><h2>Litten</h2>";
 document.getElementById("attack-container").innerHTML = '<p class="attack" onclick="attackOne()">Bite</p><p class="attack" onclick="attackTwo()">Ember</p><p class="attack" onclick="attackThree()">Flamethrower</p><p class="attack" onclick="attackFour()"> Scratch</p><p id="dodge" onclick="dodge()"> Attempt to Dodge! </p><p id="heal" onclick="heal()"> Heal 10 points! </p>';
 } else if (selectedPokemon == "Popplio"){
-    pokemonSelection.innerHTML = "<img src='../images/Popplio.png' alt='Popplio'>";
+    pokemonSelection.innerHTML = "<img src='../images/Popplio.png' alt='Popplio'><br><h2>Popplio</h2>";
     document.getElementById("attack-container").innerHTML = '<p class="attack" onclick="attackOne()">Pound</p><p class="attack" onclick="attackTwo()">Water Gun</p><p class="attack" onclick="attackThree()">Bubble Beam</p><p class="attack" onclick="attackFour()"> Splash</p><p id="dodge" onclick="dodge()"> Attempt to Dodge! </p><p id="heal" onclick="heal()"> Heal 10 points! </p>';
 } else if (selectedPokemon == "Rowlet") {
-    pokemonSelection.innerHTML = "<img src='../images/Rowlet.png' alt='Rowlet'>"; 
+    pokemonSelection.innerHTML = "<img src='../images/Rowlet.png' alt='Rowlet'><br><h2>Rowlet</h2>"; 
     document.getElementById("attack-container").innerHTML = '<p class="attack" onclick="attackOne()">Tackle</p><p class="attack" onclick="attackTwo()">Peck</p><p class="attack" onclick="attackThree()">Razor Leaf</p><p class="attack" onclick="attackFour()"> Astonish </p><p id="dodge" onclick="dodge()"> Attempt to Dodge! </p><p id="heal" onclick="heal()"> Heal 10 points! </p>';
 }
+
 
 var selectedPokemonHP = document.getElementById("pokemonSelectionHP");
 
@@ -179,7 +180,7 @@ compPokemonHP.innerHTML = compPokemonHP.innerHTML - (Math.ceil(Math.random() * 6
 
     Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
     Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
-    
+
        if(compPokemonHP.innerHTML <= 0) {
         document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
         }
