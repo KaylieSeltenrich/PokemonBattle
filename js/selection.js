@@ -177,6 +177,9 @@ compPokemonHP.innerHTML = compPokemonHP.innerHTML - (Math.ceil(Math.random() * 6
        } else { selectedPokemonHP.innerHTML = selectedPokemonHP.innerHTML - 15;
     }
 
+    Cookies.set ("userCurrentHealth", selectedPokemonHP.innerHTML);
+    Cookies.set ("computerCurrentHealth", compPokemonHP.innerHTML);
+    
        if(compPokemonHP.innerHTML <= 0) {
         document.querySelector('body').innerHTML = '<p> YOU WIN!!</p> <a onclick="removeCookies()" href="index.html">  Click here to play again! </a>';
         }
